@@ -1,19 +1,17 @@
-import React from "react";
+import React from 'react'
 
-const WeatherDisplay = ({ weather }) => {
-  const { temperature, conditions } = weather;
+const WeatherDisplay=(props)=>{
+  const {info}=props
 
-  
-  const temperatureColor = temperature > 20 ? 'red' : 'blue';
-
-  return (
-    <div>
-      {}
-      <p style={{ color: temperatureColor }}>Temperature: {temperature}</p>
-      <span style={{ color: 'black' }}>Conditions: {conditions}</span>
-    </div>
-  );
+  const styles={
+    color: info.temperature > 20 ? "red" :"blue"  
 };
-
+return (
+        <div>
+            <p>Temperature: <span style={styles}>{info.temperature}</span></p>
+            <p>Conditions: {info.conditions}</p>
+        </div>
+    );
+};
+  
 export default WeatherDisplay;
-
